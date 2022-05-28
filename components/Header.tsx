@@ -17,12 +17,12 @@ const Header: React.FC = () => {
         <ul className="flex gap-8 justify-center">
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a>One per Element</a>
             </Link>
           </li>
           <li>
             <Link href="/about/">
-              <a>About</a>
+              <a>Shared IntersectionObserver</a>
             </Link>
           </li>
         </ul>

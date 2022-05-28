@@ -1,30 +1,38 @@
 import { NextSeo } from 'next-seo'
 import clsx from 'clsx'
 import Layout from '../components/Layout'
-import Image from '../components/Image'
-import styles from '../styles/Home.module.scss'
-import logo from '../public/logo@2x.png'
+import { InView } from 'react-intersection-observer'
 
 const Home: React.FC = () => {
   return (
     <Layout>
-      <NextSeo
-        title="NextSSS"
-        description="Next.js Static Site Starter"
-        openGraph={{
-          type: 'website',
-        }}
-      />
+      <NextSeo title="One per Element" />
       <div
         className={clsx(
-          'grid grow shrink-0 place-content-center place-items-center',
-          styles.hero
+          'grid grow shrink-0 place-content-center place-items-center'
         )}
       >
-        <figure className="max-w-3xl">
-          <Image src={logo} alt="NextSSS Logo" />
-        </figure>
-        <h1 className="mt-10 font-extrabold text-center">Hello, World!</h1>
+        <ul className="flex flex-wrap gap-1 justify-center">
+          {[...Array(1000)].map((_, i) => {
+            return (
+              <InView key={i}>
+                {({ inView, ref }) => {
+                  return (
+                    <li
+                      ref={ref}
+                      className={clsx(
+                        'basis-[9%] text-center rounded border',
+                        inView && 'text-red-500'
+                      )}
+                    >
+                      {i + 1}
+                    </li>
+                  )
+                }}
+              </InView>
+            )
+          })}
+        </ul>
       </div>
     </Layout>
   )
