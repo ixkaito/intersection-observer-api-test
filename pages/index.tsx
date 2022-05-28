@@ -6,7 +6,7 @@ import { InView } from 'react-intersection-observer'
 const Home: React.FC = () => {
   return (
     <Layout>
-      <NextSeo title="One per Element" />
+      <NextSeo title="One per Component" />
       <div
         className={clsx(
           'grid grow shrink-0 place-content-center place-items-center'
