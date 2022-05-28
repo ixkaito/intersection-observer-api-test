@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import Layout from '../components/Layout'
 import { useEffect, useRef } from 'react'
 
-const About: React.FC = () => {
+const Page: React.FC = () => {
   const targets = useRef<HTMLLIElement[]>([])
   const addToTargets = (el: HTMLLIElement) => {
     if (el && !targets.current?.includes(el)) {
@@ -28,6 +28,7 @@ const About: React.FC = () => {
       observer.observe(target)
     })
   }, [targets])
+
   return (
     <Layout>
       <NextSeo title="Shared IntersectionObserver" />
@@ -54,4 +55,4 @@ const About: React.FC = () => {
   )
 }
 
-export default About
+export default Page
