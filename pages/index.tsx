@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import Layout from '../components/Layout'
 import { InView } from 'react-intersection-observer'
 
-const Home: React.FC = () => {
+const Page: React.FC = () => {
   return (
     <Layout>
       <NextSeo title="One per Component" />
@@ -38,4 +38,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default Page
