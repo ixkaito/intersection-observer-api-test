@@ -1,34 +1,27 @@
 import { useRouter } from 'next/router'
 import Link, { LinkProps } from 'next/link'
-import React, { Children, ReactElement } from 'react'
+import React, { ReactNode } from 'react'
+import clsx from 'clsx'
 
 type Props = {
-  children: ReactElement
-  activeClassName?: string
+  children: ReactNode
+  className?: string
 } & LinkProps
 
-const ActiveLink: React.FC<Props> = ({
-  children,
-  activeClassName,
-  ...props
-}) => {
+const ActiveLink: React.FC<Props> = ({ children, className, ...props }) => {
   const { asPath } = useRouter()
-  const child = Children.only(children)
-  const childClassName = child.props.className || ''
-
-  // pages/index.js will be matched via props.href
-  // pages/about.js will be matched via props.href
-  // pages/[slug].js will be matched via props.as
-  const className =
-    asPath === props.href || asPath === props.as
-      ? `${childClassName} ${activeClassName || 'active'}`.trim()
-      : childClassName
 
   return (
-    <Link {...props}>
-      {React.cloneElement(child, {
-        className: className || null,
-      })}
+    <Link
+      className={clsx(
+        className,
+        'grid place-items-center px-[0.1em] pt-[1em] pb-[0.75em] h-full text-gray-500 hover:text-black',
+        (asPath === props.href || asPath === props.as) &&
+          'text-black border-b-2 border-black border-solid'
+      )}
+      {...props}
+    >
+      {children}
     </Link>
   )
 }

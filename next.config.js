@@ -4,9 +4,8 @@
 const config = {
   reactStrictMode: true,
   trailingSlash: true,
-  images: {
-    loader: 'custom',
-    path: '/',
+  experimental: {
+    newNextLinkBehavior: true,
   },
 }
 
