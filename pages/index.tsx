@@ -22,7 +22,7 @@ const Page: React.FC = () => {
                       ref={ref}
                       className={clsx(
                         'basis-[9%] text-center rounded border',
-                        inView && 'text-red-500'
+                        inView && 'bg-red-50'
                       )}
                     >
                       {i + 1}

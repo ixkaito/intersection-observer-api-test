@@ -16,9 +16,9 @@ const Page: React.FC = () => {
       const callback = (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('text-red-500')
+            entry.target.classList.add('bg-red-50')
           } else {
-            entry.target.classList.remove('text-red-500')
+            entry.target.classList.remove('bg-red-50')
           }
         })
       }
