@@ -2,7 +2,7 @@ import Link from './ActiveLink'
 
 const Header: React.FC = () => {
   return (
-    <header className="px-4 border-b border-gray-200">
+    <header className="sticky top-0 px-4 bg-white border-b border-gray-200">
       <nav>
         <ul className="flex gap-8 justify-center">
           <li>
@@ -13,6 +13,9 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link href="/2/">Multiple IntersectionObserver Objects</Link>
+          </li>
+          <li>
+            <Link href="/3/">One Component per Viewport</Link>
           </li>
         </ul>
       </nav>
