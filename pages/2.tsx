@@ -31,7 +31,7 @@ const Page: React.FC = () => {
 
   return (
     <Layout>
-      <NextSeo title="Multiple IntersectionObserver Objects" />
+      <NextSeo title="Multiple Observers" />
       <div
         className={clsx(
           'grid grow shrink-0 place-content-center place-items-center'

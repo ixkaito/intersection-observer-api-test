@@ -16,8 +16,9 @@ const ActiveLink: React.FC<Props> = ({ children, className, ...props }) => {
       className={clsx(
         className,
         'grid place-items-center px-[0.1em] pt-[1em] pb-[0.75em] h-full text-gray-500 hover:text-black',
-        (asPath === props.href || asPath === props.as) &&
-          'text-black border-b-2 border-black border-solid'
+        asPath === props.href || asPath === props.as
+          ? 'pb-[calc(0.75em-2px)] text-black border-b-2 border-black border-solid'
+          : 'pb-[0.75em]'
       )}
       {...props}
     >

@@ -6,13 +6,13 @@ const Header: React.FC = () => {
       <nav>
         <ul className="flex gap-8 justify-center">
           <li>
-            <Link href="/">One per Component</Link>
+            <Link href="/">One Observer per Component</Link>
           </li>
           <li>
-            <Link href="/1/">One IntersectionObserver Object</Link>
+            <Link href="/1/">One Shared Observer</Link>
           </li>
           <li>
-            <Link href="/2/">Multiple IntersectionObserver Objects</Link>
+            <Link href="/2/">Multiple Observers</Link>
           </li>
           <li>
             <Link href="/3/">One Component per Viewport</Link>
