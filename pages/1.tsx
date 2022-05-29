@@ -12,8 +12,8 @@ const Page: React.FC = () => {
   }
 
   useEffect(() => {
-    const callback = (entries: any) => {
-      entries.forEach((entry: any) => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('text-red-500')
         } else {
