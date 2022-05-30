@@ -6,7 +6,7 @@ const Header: React.FC = () => {
       <nav>
         <ul className="flex gap-8 justify-center">
           <li>
-            <Link href="/">One Observer per Component</Link>
+            <Link href="/">Observer per Component</Link>
           </li>
           <li>
             <Link href="/1/">One Shared Observer</Link>

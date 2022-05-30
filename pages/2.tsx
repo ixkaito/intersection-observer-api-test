@@ -13,7 +13,7 @@ const Page: React.FC = () => {
 
   useEffect(() => {
     targets.current.forEach((target) => {
-      const callback = (entries: IntersectionObserverEntry[]) => {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('bg-red-50')
@@ -21,9 +21,6 @@ const Page: React.FC = () => {
             entry.target.classList.remove('bg-red-50')
           }
         })
-      }
-      const observer = new IntersectionObserver(callback, {
-        threshold: 0,
       })
       observer.observe(target)
     })
