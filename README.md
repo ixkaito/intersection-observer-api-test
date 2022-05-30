@@ -14,6 +14,10 @@ yarn install
 yarn dev
 ```
 
+## Demo
+
+https://intersection-observer-performance-test.vercel.app/
+
 ## License
 
 MIT
